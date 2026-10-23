@@ -881,8 +881,10 @@ footer {
 }
 
 /* =========================================================
-   10. 반응형 미디어 쿼리 (Pure CSS Responsive)
+   10. 반응형 미디어 쿼리 (Pure CSS Mobile & Tablet)
    ========================================================= */
+
+/* 태블릿 (화면 너비 992px 이하) */
 @media (max-width: 992px) {
   #tab-spring:checked ~ .season-panels .panel-spring,
   #tab-summer:checked ~ .season-panels .panel-summer,
@@ -901,48 +903,324 @@ footer {
 
   .tips-layout {
     grid-template-columns: 1fr;
+    gap: 24px;
   }
 }
 
+/* 모바일 일반 (화면 너비 768px 이하) */
 @media (max-width: 768px) {
-  .hero-title {
-    font-size: 4.8rem;
+  /* 글로벌 컨테이너 & 섹션 여백 */
+  .container {
+    padding: 0 16px;
   }
 
-  .hero-subtitle {
-    font-size: 1.3rem;
+  .section {
+    padding: 52px 0;
   }
 
+  .section-header {
+    margin-bottom: 28px;
+  }
+
+  .section-tag {
+    font-size: 0.78rem;
+    padding: 3px 12px;
+  }
+
+  .section-title {
+    font-size: 1.6rem;
+    margin-bottom: 8px;
+  }
+
+  .section-desc {
+    font-size: 0.92rem;
+    line-height: 1.55;
+  }
+
+  /* 네비게이션 헤더 */
   .navbar-inner {
-    flex-wrap: wrap;
+    flex-direction: column;
     height: auto;
-    padding: 12px 0;
-    gap: 12px;
-    justify-content: center;
+    padding: 10px 16px;
+    gap: 10px;
+  }
+
+  .brand-logo {
+    font-size: 1.25rem;
   }
 
   .nav-links {
-    gap: 12px;
-    flex-wrap: wrap;
+    width: 100%;
+    display: flex;
     justify-content: center;
+    gap: 6px;
+    overflow-x: auto;
+    white-space: nowrap;
+    padding-bottom: 4px;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
   }
 
+  .nav-links::-webkit-scrollbar {
+    display: none;
+  }
+
+  .nav-link {
+    font-size: 0.85rem;
+    padding: 6px 10px;
+    flex-shrink: 0;
+  }
+
+  /* 히어로 섹션 */
+  .hero {
+    min-height: 75vh;
+    padding: 60px 16px;
+  }
+
+  .hero-badge {
+    font-size: 0.82rem;
+    padding: 4px 12px;
+    margin-bottom: 14px;
+  }
+
+  .hero-title {
+    font-size: 5rem;
+    line-height: 0.95;
+    margin-bottom: 8px;
+  }
+
+  .hero-subtitle {
+    font-size: 1.35rem;
+    margin-bottom: 20px;
+  }
+
+  /* 사계절 탭 네비게이션 (2x2 그리드 배열) */
+  .season-tab-nav {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+    margin-bottom: 24px;
+  }
+
+  .season-tab-btn {
+    justify-content: center;
+    padding: 10px 12px;
+    font-size: 0.88rem;
+  }
+
+  /* 사계절 카드 패널 (모바일 1열) */
   #tab-spring:checked ~ .season-panels .panel-spring,
   #tab-summer:checked ~ .season-panels .panel-summer,
   #tab-autumn:checked ~ .season-panels .panel-autumn,
   #tab-winter:checked ~ .season-panels .panel-winter {
     grid-template-columns: 1fr;
+    gap: 20px;
   }
 
+  /* 테마 필터 바 (모바일 가로 터치 스크롤) */
+  .theme-filter-nav {
+    display: flex;
+    justify-content: flex-start;
+    gap: 8px;
+    overflow-x: auto;
+    white-space: nowrap;
+    padding: 0 4px 10px;
+    margin-bottom: 24px;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+
+  .theme-filter-nav::-webkit-scrollbar {
+    display: none;
+  }
+
+  .theme-filter-btn {
+    flex-shrink: 0;
+    padding: 8px 16px;
+    font-size: 0.88rem;
+  }
+
+  /* 테마 그리드 (모바일 1열) */
   .theme-grid {
     grid-template-columns: 1fr;
+    gap: 20px;
   }
 
+  /* 카드 본문 최적화 */
+  .card-img-wrap {
+    height: 190px;
+  }
+
+  .card-body {
+    padding: 18px 16px;
+  }
+
+  .card-title {
+    font-size: 1.18rem;
+    margin-bottom: 8px;
+  }
+
+  .card-desc {
+    font-size: 0.9rem;
+    line-height: 1.55;
+    margin-bottom: 14px;
+  }
+
+  .tag {
+    font-size: 0.76rem;
+    padding: 3px 8px;
+  }
+
+  .btn-card-map {
+    font-size: 0.82rem;
+    padding: 5px 10px;
+  }
+
+  /* 준비물 & 꿀팁 섹션 */
+  .tips-box {
+    padding: 22px 16px;
+    border-radius: var(--radius-sm);
+  }
+
+  .box-title {
+    font-size: 1.2rem;
+  }
+
+  .box-subtitle {
+    font-size: 0.84rem;
+    margin-bottom: 18px;
+  }
+
+  .check-item label {
+    padding: 10px 12px;
+    gap: 10px;
+  }
+
+  .chk-box {
+    width: 20px;
+    height: 20px;
+  }
+
+  .chk-text {
+    font-size: 0.88rem;
+    line-height: 1.4;
+  }
+
+  .accordion-header {
+    padding: 12px 14px;
+    font-size: 0.9rem;
+  }
+
+  .accordion-body {
+    padding: 0 14px 14px;
+    font-size: 0.86rem;
+  }
+
+  /* 소개(About) 카드 */
+  .about-card {
+    padding: 24px 18px;
+  }
+
+  .about-card-icon {
+    font-size: 2.2rem;
+    margin-bottom: 10px;
+  }
+
+  .about-card-title {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+  }
+
+  .about-card-desc {
+    font-size: 0.9rem;
+    line-height: 1.6;
+    margin-bottom: 16px;
+  }
+
+  .about-features {
+    font-size: 0.88rem;
+    padding: 12px;
+    gap: 10px;
+  }
+
+  .about-qr-box {
+    padding: 14px;
+  }
+
+  .about-qr-box img {
+    width: 110px;
+    height: 110px;
+  }
+
+  .about-contact-info {
+    padding: 14px;
+    font-size: 0.88rem;
+    margin-bottom: 16px;
+  }
+
+  .btn {
+    width: 100%;
+    justify-content: center;
+    padding: 12px 20px;
+  }
+
+  /* 푸터 */
+  .footer-bottom {
+    padding: 20px 16px;
+    font-size: 0.8rem;
+  }
+}
+
+/* 모바일 소형 (스마트폰 480px 이하) */
+@media (max-width: 480px) {
   .section {
-    padding: 60px 0;
+    padding: 40px 0;
   }
 
   .section-title {
-    font-size: 1.7rem;
+    font-size: 1.45rem;
+  }
+
+  .section-desc {
+    font-size: 0.86rem;
+  }
+
+  .hero {
+    min-height: 70vh;
+    padding: 48px 12px;
+  }
+
+  .hero-badge {
+    font-size: 0.78rem;
+    padding: 4px 10px;
+  }
+
+  .hero-title {
+    font-size: 4rem;
+    line-height: 0.92;
+  }
+
+  .hero-subtitle {
+    font-size: 1.15rem;
+    line-height: 1.4;
+  }
+
+  .nav-link {
+    font-size: 0.8rem;
+    padding: 5px 8px;
+  }
+
+  .season-tab-nav {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 6px;
+  }
+
+  .season-tab-btn {
+    padding: 8px 10px;
+    font-size: 0.82rem;
+  }
+
+  .card-img-wrap {
+    height: 170px;
   }
 }
