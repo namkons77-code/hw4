@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Today's Trip - 준비물 & 꿀팁</title>
+    <meta
+      name="description"
+      content="지금 여행 가기 좋은 사계절 명소와 테마별 최적의 여행지를 추천해 드립니다."
+    />
+    <link rel="icon" type="image/svg+xml" href="images/favicon.svg" />
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Diphylleia&family=Dongle:wght@400;700&family=Noto+Sans+KR:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+
+  <body>
+    <!-- 네비게이션 헤더 -->
+    <header class="navbar">
+      <div class="container navbar-inner">
+        <a href="index.html" class="brand-logo">
+          <span class="brand-icon">🧭</span>
+          <span class="brand-name">Today's Trip</span>
+        </a>
+
+        <nav class="nav-links">
+          <a href="seasons.html" class="nav-link">🌸 사계절 추천</a>
+          <a href="themes.html" class="nav-link">🎯 테마별 명소</a>
+          <a href="tips.html" class="nav-link active">🎒 준비물 & 꿀팁</a>
+          <a href="about.html" class="nav-link">✉️ 문의</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <!-- 준비물 체크리스트 & 꿀팁 섹션 -->
+      <section class="section tips-section" id="tips">
+        <div class="container">
+          <div class="section-header">
+            <span class="section-tag">TRAVEL GUIDE</span>
+            <h2 class="section-title">스마트 체크리스트 & 여행 꿀팁</h2>
+            <p class="section-desc">
+              출발 전 빠뜨린 짐은 없는지 확인하고, 유용한 여행 노하우를 미리 챙겨보세요.
+            </p>
+          </div>
+
+          <div class="tips-layout">
+            <!-- 왼쪽: 순수 CSS 체크리스트 (클릭 시 취소선 및 체크) -->
+            <div class="tips-box">
+              <h3 class="box-title">🎒 여행 필수 준비물 체크리스트</h3>
+              <p class="box-subtitle">항목을 클릭하면 완료(체크) 처리됩니다.</p>
+
+              <ul class="checklist">
+                <li class="check-item">
+                  <input type="checkbox" id="chk1" />
+                  <label for="chk1">
+                    <span class="chk-box"></span>
+                    <span class="chk-text">💳 신분증, 운전면허증 및 결제 수단</span>
+                  </label>
+                </li>
+                <li class="check-item">
+                  <input type="checkbox" id="chk2" />
+                  <label for="chk2">
+                    <span class="chk-box"></span>
+                    <span class="chk-text">🔋 스마트폰 충전기 & 대용량 보조배터리</span>
+                  </label>
+                </li>
+                <li class="check-item">
+                  <input type="checkbox" id="chk3" />
+                  <label for="chk3">
+                    <span class="chk-box"></span>
+                    <span class="chk-text">👟 편안한 걷기용 운동화 & 자외선 차단 선글라스</span>
+                  </label>
+                </li>
+                <li class="check-item">
+                  <input type="checkbox" id="chk4" />
+                  <label for="chk4">
+                    <span class="chk-box"></span>
+                    <span class="chk-text">🧥 일교차 대비 겉옷 또는 휴대용 접이식 우산</span>
+                  </label>
+                </li>
+                <li class="check-item">
+                  <input type="checkbox" id="chk5" />
+                  <label for="chk5">
+                    <span class="chk-box"></span>
+                    <span class="chk-text">💊 비상 상비약 (두통약, 소화제, 멀미약, 밴드)</span>
+                  </label>
+                </li>
+                <li class="check-item">
+                  <input type="checkbox" id="chk6" />
+                  <label for="chk6">
+                    <span class="chk-box"></span>
+                    <span class="chk-text">📸 삼각대 또는 블루투스 셀카봉</span>
+                  </label>
+                </li>
+              </ul>
+            </div>
+
+            <!-- 오른쪽: HTML5 details/summary 아코디언 꿀팁 -->
+            <div class="tips-box">
+              <h3 class="box-title">💡 알아두면 유용한 여행 꿀팁</h3>
+              <p class="box-subtitle">궁금한 질문을 클릭하면 상세 내용이 펼쳐집니다.</p>
+
+              <div class="accordion">
+                <details class="accordion-item" open>
+                  <summary class="accordion-header">🚗 주말 고속도로 정체를 피하는 시간대</summary>
+                  <div class="accordion-body">
+                    강원·동해안 방면은 토요일 오전 6시 30분 이전에 출발하시거나 일요일 오후 8시 이후 귀경하시면 도로 정체를 최소 1시간 이상 줄일 수 있습니다.
+                  </div>
+                </details>
+
+                <details class="accordion-item">
+                  <summary class="accordion-header">🏨 인기 숙소 및 명소 예약 골든타임</summary>
+                  <div class="accordion-body">
+                    가을 화담숲 모노레일이나 국립공원 야영장은 방문 1개월 전 오전 9시~13시에 예약이 오픈되므로 미리 캘린더 알림을 등록해 두시는 것을 추천합니다.
+                  </div>
+                </details>
+
+                <details class="accordion-item">
+                  <summary class="accordion-header">📸 인생 사진을 건지는 매직 아워 (골든아워)</summary>
+                  <div class="accordion-body">
+                    일출 직후 1시간과 일몰 직전 1시간은 빛이 부드럽고 따뜻한 붉은 톤을 띄어 얼굴에 과한 그림자가 지지 않고 가장 감성적인 사진을 남길 수 있습니다.
+                  </div>
+                </details>
+
+                <details class="accordion-item">
+                  <summary class="accordion-header">🌿 현지 로컬 맛집 실패 없이 찾는 노하우</summary>
+                  <div class="accordion-body">
+                    관광지 중심가보다는 관공서(시청, 군청) 인근 주민 단골 식당이나 지도 앱의 현지인 리뷰를 참고하시면 바가지 없이 훌륭한 식사를 즐길 수 있습니다.
+                  </div>
+                </details>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- 푸터 -->
+    <footer>
+      <div class="footer-bottom">
+        <div class="container">
+          <p>© 2026 Today's Trip. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

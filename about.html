@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Today's Trip - 서비스 소개 및 문의</title>
+    <meta
+      name="description"
+      content="지금 여행 가기 좋은 사계절 명소와 테마별 최적의 여행지를 추천해 드립니다."
+    />
+    <link rel="icon" type="image/svg+xml" href="images/favicon.svg" />
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Diphylleia&family=Dongle:wght@400;700&family=Noto+Sans+KR:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Stylesheet (순수 CSS만 사용) -->
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+
+  <body>
+    <!-- 1. 네비게이션 헤더 -->
+    <header class="navbar">
+      <div class="container navbar-inner">
+        <a href="index.html" class="brand-logo">
+          <span class="brand-icon">🧭</span>
+          <span class="brand-name">Today's Trip</span>
+        </a>
+
+        <nav class="nav-links">
+          <a href="seasons.html" class="nav-link">🌸 사계절 추천</a>
+          <a href="themes.html" class="nav-link">🎯 테마별 명소</a>
+          <a href="tips.html" class="nav-link">🎒 준비물 & 꿀팁</a>
+          <a href="about.html" class="nav-link active">✉️ 문의</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <!-- 2. 서비스 소개 및 문의 섹션 -->
+      <section class="section about-section" id="about">
+        <div class="container">
+          <div class="section-header">
+            <span class="section-tag">ABOUT & CONTACT</span>
+            <h2 class="section-title">서비스 소개 및 문의</h2>
+            <p class="section-desc">
+              Today's Trip에 대한 소개와 제휴 및 문의 안내입니다. 언제든 편하게
+              연락해 주세요.
+            </p>
+          </div>
+
+          <div class="about-grid">
+            <!-- 카드 1: 서비스 소개 -->
+            <article class="about-card">
+              <div class="about-card-icon">🧭</div>
+              <h3 class="about-card-title">Today's Trip 소개</h3>
+              <p class="about-card-desc">
+                Today's Trip은 대한민국 방방곡곡 숨겨진 사계절의 아름다운 명소와
+                테마별 추천 여행지, 필수 준비물 체크리스트를 한눈에 볼 수 있도록
+                돕는 힐링 여행 가이드입니다.
+              </p>
+              <ul class="about-features">
+                <li>
+                  🌸 <strong>사계절 큐레이션:</strong> 봄·여름·가을·겨울 최고의
+                  여행지
+                </li>
+                <li>
+                  🎯 <strong>맞춤 테마 여행:</strong> 자연 힐링부터 액티비티,
+                  감성 카페
+                </li>
+                <li>
+                  🎒 <strong>스마트 가이드:</strong> 필수품 체크리스트 & 알짜
+                  여행 노하우
+                </li>
+              </ul>
+            </article>
+
+            <!-- 카드 2: 모바일 QR 접속 -->
+            <article class="about-card">
+              <div class="about-card-icon">📱</div>
+              <h3 class="about-card-title">스마트폰 간편 스캔</h3>
+              <p class="about-card-desc">
+                스마트폰의 기본 카메라 앱을 열어 아래 QR 코드를 비추면 언제
+                어디서나 모바일에 최적화된 화면으로 편리하게 여행 정보를
+                확인하실 수 있습니다.
+              </p>
+              <div class="about-qr-box">
+                <img
+                  src="images/qrcode.png"
+                  alt="모바일 접속 QR 코드"
+                  width="130"
+                  height="130"
+                />
+              </div>
+            </article>
+
+            <!-- 카드 3: 1:1 문의처 -->
+            <article class="about-card">
+              <div class="about-card-icon">✉️</div>
+              <h3 class="about-card-title">Contact Us</h3>
+              <p class="about-card-desc">
+                새로운 여행지 제보나 서비스 개선 의견, 제휴 문의가 있으시다면
+                언제든 아래 이메일로 연락해 주시기 바랍니다.
+              </p>
+              <div class="about-contact-info">
+                <p>
+                  <strong>서비스:</strong> 대한민국 사계절 여행지 추천 및 가이드
+                </p>
+                <p>
+                  <strong>운영시간:</strong> 상시 온라인 열람 및 문의 접수 가능
+                </p>
+              </div>
+              <a
+                href="mailto:namkons77@gmail.com"
+                class="btn btn-primary"
+                style="margin-top: auto; justify-content: center"
+              >
+                이메일 문의 보내기 ✉️
+              </a>
+            </article>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- 3. 푸터 (전체 페이지 통일) -->
+    <footer>
+      <div class="footer-bottom">
+        <div class="container">
+          <p>© 2026 Today's Trip. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

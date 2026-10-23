@@ -1,0 +1,336 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Today's Trip - 테마별 명소</title>
+    <meta
+      name="description"
+      content="지금 여행 가기 좋은 사계절 명소와 테마별 최적의 여행지를 추천해 드립니다."
+    />
+    <link rel="icon" type="image/svg+xml" href="images/favicon.svg" />
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Diphylleia&family=Dongle:wght@400;700&family=Noto+Sans+KR:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Stylesheet (순수 CSS만 사용) -->
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+
+  <body>
+    <!-- 1. 네비게이션 헤더 -->
+    <header class="navbar">
+      <div class="container navbar-inner">
+        <a href="index.html" class="brand-logo">
+          <span class="brand-icon">🧭</span>
+          <span class="brand-name">Today's Trip</span>
+        </a>
+
+        <nav class="nav-links">
+          <a href="seasons.html" class="nav-link">🌸 사계절 추천</a>
+          <a href="themes.html" class="nav-link active">🎯 테마별 명소</a>
+          <a href="tips.html" class="nav-link">🎒 준비물 & 꿀팁</a>
+          <a href="about.html" class="nav-link">✉️ 문의</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <!-- 2. 테마별 추천 여행지 섹션 (순수 CSS 탭 필터링) -->
+      <section class="section theme-section" id="themes">
+        <div class="container">
+          <div class="section-header">
+            <span class="section-tag">THEME EXPLORER</span>
+            <h2 class="section-title">내 취향대로 골라 떠나는 테마 여행</h2>
+            <p class="section-desc">
+              자연 속 힐링부터 감성 카페 투어, 시원한 바다 액티비티까지 원하는
+              테마를 선택해보세요.
+            </p>
+          </div>
+
+          <!-- 순수 CSS 라디오 필터 바 -->
+          <div class="theme-filter-container">
+            <!-- 라디오 버튼 (화면에는 숨김) -->
+            <input
+              type="radio"
+              name="theme-filter"
+              id="theme-all"
+              class="theme-radio"
+              checked
+            />
+            <input
+              type="radio"
+              name="theme-filter"
+              id="theme-nature"
+              class="theme-radio"
+            />
+            <input
+              type="radio"
+              name="theme-filter"
+              id="theme-ocean"
+              class="theme-radio"
+            />
+            <input
+              type="radio"
+              name="theme-filter"
+              id="theme-photo"
+              class="theme-radio"
+            />
+            <input
+              type="radio"
+              name="theme-filter"
+              id="theme-cafe"
+              class="theme-radio"
+            />
+
+            <!-- 필터 버튼 목록 (라벨 클릭 시 순수 CSS로 카드 필터링) -->
+            <div class="theme-filter-nav">
+              <label for="theme-all" class="theme-filter-btn">전체보기</label>
+              <label for="theme-nature" class="theme-filter-btn"
+                >🌿 힐링 & 자연</label
+              >
+              <label for="theme-ocean" class="theme-filter-btn"
+                >🌊 바다 & 액티비티</label
+              >
+              <label for="theme-photo" class="theme-filter-btn"
+                >📸 인생샷 & 포토존</label
+              >
+              <label for="theme-cafe" class="theme-filter-btn"
+                >☕ 감성 카페 & 도심</label
+              >
+            </div>
+
+            <!-- 테마 카드 그리드 -->
+            <div class="theme-grid">
+              <!-- 카드 1 (자연) -->
+              <article class="card" data-theme="nature">
+                <div class="card-img-wrap">
+                  <img
+                    src="images/autumn.jpg"
+                    alt="순천만 국가정원"
+                    loading="lazy"
+                  />
+                  <span class="card-badge badge-nature">🌿 힐링 & 자연</span>
+                </div>
+                <div class="card-body">
+                  <span class="card-loc">📍 전남 순천시</span>
+                  <h3 class="card-title">순천만 국가정원 & 습지</h3>
+                  <p class="card-desc">
+                    광활한 갈대숲 데크길을 걸으며 일상의 피로를 씻어내는
+                    대한민국 1호 국가정원 힐링 코스.
+                  </p>
+                  <div class="card-tags">
+                    <span class="tag">#힐링</span>
+                    <span class="tag">#자연생태</span>
+                    <span class="tag">#국가정원</span>
+                  </div>
+                  <div class="card-footer">
+                    <a
+                      href="https://map.naver.com/p/search/순천만국가정원"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      class="btn-card-map"
+                    >
+                      🗺️ 지도 위치 보기
+                    </a>
+                    <span class="card-like-badge">♥ 142</span>
+                  </div>
+                </div>
+              </article>
+
+              <!-- 카드 2 (바다) -->
+              <article class="card" data-theme="ocean">
+                <div class="card-img-wrap">
+                  <img
+                    src="images/img3-800.jpg"
+                    alt="제주 협재 바다"
+                    loading="lazy"
+                  />
+                  <span class="card-badge badge-ocean">🌊 바다 & 액티비티</span>
+                </div>
+                <div class="card-body">
+                  <span class="card-loc">📍 제주 제주시</span>
+                  <h3 class="card-title">제주 협재 & 금능 바다</h3>
+                  <p class="card-desc">
+                    패들보드와 스노클링을 즐기며 마주하는 투명한 제주 청정
+                    바다와 비양도 풍경.
+                  </p>
+                  <div class="card-tags">
+                    <span class="tag">#스노클링</span>
+                    <span class="tag">#해양스포츠</span>
+                    <span class="tag">#에메랄드</span>
+                  </div>
+                  <div class="card-footer">
+                    <a
+                      href="https://map.naver.com/p/search/제주협재해수욕장"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      class="btn-card-map"
+                    >
+                      🗺️ 지도 위치 보기
+                    </a>
+                    <span class="card-like-badge">♥ 210</span>
+                  </div>
+                </div>
+              </article>
+
+              <!-- 카드 3 (인생샷) -->
+              <article class="card" data-theme="photo">
+                <div class="card-img-wrap">
+                  <img
+                    src="images/winter.jpg"
+                    alt="대관령 양떼목장 설경"
+                    loading="lazy"
+                  />
+                  <span class="card-badge badge-photo">📸 인생샷 & 포토존</span>
+                </div>
+                <div class="card-body">
+                  <span class="card-loc">📍 강원 평창군</span>
+                  <h3 class="card-title">대관령 알프스 설경</h3>
+                  <p class="card-desc">
+                    새하얀 설원 위 나무 오두막 앞에서 남기는 동화 같은 감성
+                    스냅샷 명소.
+                  </p>
+                  <div class="card-tags">
+                    <span class="tag">#인생샷</span>
+                    <span class="tag">#스냅사진</span>
+                    <span class="tag">#겨울감성</span>
+                  </div>
+                  <div class="card-footer">
+                    <a
+                      href="https://map.naver.com/p/search/대관령양떼목장"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      class="btn-card-map"
+                    >
+                      🗺️ 지도 위치 보기
+                    </a>
+                    <span class="card-like-badge">♥ 188</span>
+                  </div>
+                </div>
+              </article>
+
+              <!-- 카드 4 (카페) -->
+              <article class="card" data-theme="cafe">
+                <div class="card-img-wrap">
+                  <img
+                    src="images/summer.jpg"
+                    alt="안목해변 카페거리"
+                    loading="lazy"
+                  />
+                  <span class="card-badge badge-cafe">☕ 감성 카페 & 도심</span>
+                </div>
+                <div class="card-body">
+                  <span class="card-loc">📍 강원 강릉시</span>
+                  <h3 class="card-title">안목해변 커피거리</h3>
+                  <p class="card-desc">
+                    파도 소리를 들으며 루프탑에서 즐기는 스페셜티 핸드드립
+                    커피와 바다 산책.
+                  </p>
+                  <div class="card-tags">
+                    <span class="tag">#오션뷰카페</span>
+                    <span class="tag">#루프탑</span>
+                    <span class="tag">#원두향</span>
+                  </div>
+                  <div class="card-footer">
+                    <a
+                      href="https://map.naver.com/p/search/안목해변커피거리"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      class="btn-card-map"
+                    >
+                      🗺️ 지도 위치 보기
+                    </a>
+                    <span class="card-like-badge">♥ 132</span>
+                  </div>
+                </div>
+              </article>
+
+              <!-- 카드 5 (자연) -->
+              <article class="card" data-theme="nature">
+                <div class="card-img-wrap">
+                  <img src="images/img11-800.jpg" alt="화담숲" loading="lazy" />
+                  <span class="card-badge badge-nature">🌿 힐링 & 자연</span>
+                </div>
+                <div class="card-body">
+                  <span class="card-loc">📍 경기 광주시</span>
+                  <h3 class="card-title">화담숲 피톤치드 숲길</h3>
+                  <p class="card-desc">
+                    피톤치드 가득한 자작나무 숲과 데크로드를 걸으며 숨을 고르는
+                    친환경 생태 산책로.
+                  </p>
+                  <div class="card-tags">
+                    <span class="tag">#숲속힐링</span>
+                    <span class="tag">#산림욕</span>
+                    <span class="tag">#자작나무숲</span>
+                  </div>
+                  <div class="card-footer">
+                    <a
+                      href="https://map.naver.com/p/search/화담숲"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      class="btn-card-map"
+                    >
+                      🗺️ 지도 위치 보기
+                    </a>
+                    <span class="card-like-badge">♥ 119</span>
+                  </div>
+                </div>
+              </article>
+
+              <!-- 카드 6 (인생샷) -->
+              <article class="card" data-theme="photo">
+                <div class="card-img-wrap">
+                  <img
+                    src="images/spring.jpg"
+                    alt="경주 대릉원 목련 포토존"
+                    loading="lazy"
+                  />
+                  <span class="card-badge badge-photo">📸 인생샷 & 포토존</span>
+                </div>
+                <div class="card-body">
+                  <span class="card-loc">📍 경북 경주시</span>
+                  <h3 class="card-title">대릉원 목련 포토존</h3>
+                  <p class="card-desc">
+                    고분 사이에 우뚝 선 고결한 목련나무 아래에서 찍는 전국
+                    최고의 감성 인생샷 명당.
+                  </p>
+                  <div class="card-tags">
+                    <span class="tag">#인생사진</span>
+                    <span class="tag">#한옥스냅</span>
+                    <span class="tag">#황리단길</span>
+                  </div>
+                  <div class="card-footer">
+                    <a
+                      href="https://map.naver.com/p/search/경주대릉원"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      class="btn-card-map"
+                    >
+                      🗺️ 지도 위치 보기
+                    </a>
+                    <span class="card-like-badge">♥ 196</span>
+                  </div>
+                </div>
+              </article>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- 3. 푸터 (전체 페이지 통일) -->
+    <footer>
+      <div class="footer-bottom">
+        <div class="container">
+          <p>© 2026 Today's Trip. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

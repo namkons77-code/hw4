@@ -1,0 +1,948 @@
+@charset "UTF-8";
+
+/* =========================================================
+   1. 테마 변수 & 글로벌 리셋
+   ========================================================= */
+:root {
+  /* 주요 브랜드 색상 */
+  --primary: #2563eb;
+  --primary-hover: #1d4ed8;
+  --primary-light: #eff6ff;
+
+  /* 사계절 대표 테마 색상 */
+  --spring: #ec4899;
+  --spring-bg: #fdf2f8;
+  --summer: #0284c7;
+  --summer-bg: #f0f9ff;
+  --autumn: #d97706;
+  --autumn-bg: #fffbeb;
+  --winter: #4f46e5;
+  --winter-bg: #eef2ff;
+
+  /* 텍스트 & 배경 색상 */
+  --text-main: #1e293b;
+  --text-sub: #64748b;
+  --text-light: #94a3b8;
+  --bg-page: #f8fafc;
+  --bg-card: #ffffff;
+  --border-color: #e2e8f0;
+
+  /* 그림자 & 모서리 둥글기 */
+  --shadow-sm: 0 2px 6px rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 8px 20px rgba(0, 0, 0, 0.08);
+  --shadow-hover: 0 14px 28px rgba(0, 0, 0, 0.12);
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 20px;
+
+  /* 폰트 계열 */
+  --font-body: 'Noto Sans KR', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-dongle: 'Dongle', sans-serif;
+  --font-diphylleia: 'Diphylleia', serif;
+
+  --transition: all 0.25s ease;
+}
+
+/* 리셋 스타일 */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-family: var(--font-body);
+  font-size: 16px;
+  color: var(--text-main);
+  background-color: var(--bg-page);
+  scroll-behavior: smooth;
+  line-height: 1.6;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: var(--transition);
+}
+
+ul {
+  list-style: none;
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* =========================================================
+   2. 네비게이션 헤더 (CSS Sticky)
+   ========================================================= */
+.navbar {
+  position: sticky;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--border-color);
+  z-index: 100;
+  box-shadow: var(--shadow-sm);
+}
+
+.navbar-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 68px;
+}
+
+.brand-logo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 700;
+  font-size: 1.35rem;
+  color: var(--primary);
+}
+
+.brand-icon {
+  font-size: 1.45rem;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.nav-link {
+  font-weight: 500;
+  color: var(--text-sub);
+  font-size: 0.95rem;
+  padding: 6px 10px;
+  border-radius: var(--radius-sm);
+}
+
+.nav-link:hover {
+  color: var(--primary);
+  background-color: var(--primary-light);
+}
+
+.nav-link.active {
+  color: var(--primary);
+  background-color: var(--primary-light);
+  font-weight: 700;
+}
+
+/* =========================================================
+   3. 히어로 섹션
+   ========================================================= */
+.hero {
+  position: relative;
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background-image:
+    linear-gradient(rgba(15, 23, 42, 0.55), rgba(15, 23, 42, 0.65)),
+    url("../images/combined_seasons_gentle_blend.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: #ffffff;
+  padding: 80px 20px;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 820px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.hero-badge {
+  display: inline-block;
+  background-color: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(6px);
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  color: #ffffff;
+  padding: 6px 16px;
+  border-radius: 9999px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  margin-bottom: 20px;
+}
+
+.hero-title {
+  font-family: var(--font-dongle);
+  font-size: 8rem;
+  line-height: 0.9;
+  letter-spacing: 2px;
+  margin-bottom: 12px;
+  text-shadow: 2px 4px 12px rgba(0, 0, 0, 0.6);
+}
+
+.hero-subtitle {
+  font-family: var(--font-diphylleia);
+  font-size: 2rem;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.92);
+  margin-bottom: 32px;
+  text-shadow: 1px 2px 6px rgba(0, 0, 0, 0.5);
+}
+
+/* =========================================================
+   4. 섹션 공통 스타일
+   ========================================================= */
+.section {
+  padding: 84px 0;
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 48px;
+}
+
+.section-tag {
+  display: inline-block;
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  color: var(--primary);
+  background-color: var(--primary-light);
+  padding: 4px 14px;
+  border-radius: 9999px;
+  margin-bottom: 10px;
+}
+
+.section-title {
+  font-size: 2.1rem;
+  font-weight: 700;
+  color: var(--text-main);
+  margin-bottom: 12px;
+}
+
+.section-desc {
+  font-size: 1.05rem;
+  color: var(--text-sub);
+  max-width: 620px;
+  margin: 0 auto;
+}
+
+/* =========================================================
+   5. 사계절 추천 섹션 (순수 CSS 탭 전환)
+   ========================================================= */
+.seasons-section {
+  background-color: #ffffff;
+}
+
+/* CSS 라디오 버튼 트리거 숨김 */
+.season-radio {
+  display: none;
+}
+
+/* 탭 버튼 스타일 */
+.season-tab-nav {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 40px;
+  flex-wrap: wrap;
+}
+
+.season-tab-btn {
+  display: inline-flex;
+  align-items: center;
+  padding: 12px 24px;
+  background-color: #f1f5f9;
+  color: #475569;
+  border-radius: 9999px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition);
+  user-select: none;
+  box-shadow: var(--shadow-sm);
+}
+
+.season-tab-btn:hover {
+  background-color: #e2e8f0;
+  transform: translateY(-2px);
+}
+
+/* 선택된 라디오에 따라 탭 버튼 강조 색상 적용 */
+#tab-spring:checked ~ .season-tab-nav label[for="tab-spring"] {
+  background-color: var(--spring);
+  color: #ffffff;
+  box-shadow: 0 4px 14px rgba(236, 72, 153, 0.35);
+}
+
+#tab-summer:checked ~ .season-tab-nav label[for="tab-summer"] {
+  background-color: var(--summer);
+  color: #ffffff;
+  box-shadow: 0 4px 14px rgba(2, 132, 199, 0.35);
+}
+
+#tab-autumn:checked ~ .season-tab-nav label[for="tab-autumn"] {
+  background-color: var(--autumn);
+  color: #ffffff;
+  box-shadow: 0 4px 14px rgba(217, 119, 6, 0.35);
+}
+
+#tab-winter:checked ~ .season-tab-nav label[for="tab-winter"] {
+  background-color: var(--winter);
+  color: #ffffff;
+  box-shadow: 0 4px 14px rgba(79, 70, 229, 0.35);
+}
+
+/* 기본 패널 숨김 */
+.season-panel {
+  display: none;
+}
+
+/* 선택된 라디오에 따라 해당 계절 패널 표시 (3열 그리드 + 페이드인) */
+#tab-spring:checked ~ .season-panels .panel-spring,
+#tab-summer:checked ~ .season-panels .panel-summer,
+#tab-autumn:checked ~ .season-panels .panel-autumn,
+#tab-winter:checked ~ .season-panels .panel-winter {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+  animation: fadeIn 0.35s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* 카드 공통 스타일 */
+.card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+  transition: var(--transition);
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-hover);
+  border-color: #cbd5e1;
+}
+
+.card-img-wrap {
+  position: relative;
+  height: 220px;
+  overflow: hidden;
+  background-color: #e2e8f0;
+}
+
+.card-img-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.card:hover .card-img-wrap img {
+  transform: scale(1.06);
+}
+
+.card-badge {
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  padding: 5px 12px;
+  border-radius: 9999px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: #ffffff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+}
+
+.badge-spring { background-color: var(--spring); }
+.badge-summer { background-color: var(--summer); }
+.badge-autumn { background-color: var(--autumn); }
+.badge-winter { background-color: var(--winter); }
+.badge-nature { background-color: #16a34a; }
+.badge-ocean  { background-color: var(--summer); }
+.badge-photo  { background-color: #8b5cf6; }
+.badge-cafe   { background-color: var(--autumn); }
+
+.card-body {
+  padding: 22px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.card-loc {
+  font-size: 0.85rem;
+  color: var(--primary);
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+
+.card-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--text-main);
+  margin-bottom: 10px;
+  line-height: 1.4;
+}
+
+.card-desc {
+  font-size: 0.93rem;
+  color: var(--text-sub);
+  line-height: 1.6;
+  margin-bottom: 18px;
+  flex-grow: 1;
+}
+
+.card-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.tag {
+  background-color: #f1f5f9;
+  color: #475569;
+  padding: 4px 10px;
+  border-radius: var(--radius-sm);
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+
+.card-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 16px;
+  padding-top: 14px;
+  border-top: 1px solid var(--border-color);
+}
+
+.btn-card-map {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--primary);
+  padding: 6px 12px;
+  border-radius: var(--radius-sm);
+  background-color: var(--primary-light);
+  transition: var(--transition);
+}
+
+.btn-card-map:hover {
+  background-color: var(--primary);
+  color: #ffffff;
+}
+
+.card-like-badge {
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: #e11d48;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+/* =========================================================
+   6. 테마별 추천 여행지 섹션 (순수 CSS 탭 필터링)
+   ========================================================= */
+.theme-section,
+.themes-section {
+  background-color: var(--bg-page);
+}
+
+.theme-radio {
+  display: none;
+}
+
+.theme-filter-nav {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 40px;
+  flex-wrap: wrap;
+}
+
+.theme-filter-btn {
+  display: inline-flex;
+  align-items: center;
+  padding: 10px 22px;
+  background-color: #f1f5f9;
+  color: #475569;
+  border-radius: 9999px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition);
+  user-select: none;
+  box-shadow: var(--shadow-sm);
+}
+
+.theme-filter-btn:hover {
+  background-color: #e2e8f0;
+  transform: translateY(-2px);
+}
+
+/* 활성 탭 스타일 */
+#theme-all:checked ~ .theme-filter-nav label[for="theme-all"] {
+  background-color: var(--primary);
+  color: #ffffff;
+  box-shadow: 0 4px 14px rgba(37, 99, 235, 0.35);
+}
+
+#theme-nature:checked ~ .theme-filter-nav label[for="theme-nature"] {
+  background-color: #16a34a;
+  color: #ffffff;
+  box-shadow: 0 4px 14px rgba(22, 163, 74, 0.35);
+}
+
+#theme-ocean:checked ~ .theme-filter-nav label[for="theme-ocean"] {
+  background-color: var(--summer);
+  color: #ffffff;
+  box-shadow: 0 4px 14px rgba(2, 132, 199, 0.35);
+}
+
+#theme-photo:checked ~ .theme-filter-nav label[for="theme-photo"] {
+  background-color: #8b5cf6;
+  color: #ffffff;
+  box-shadow: 0 4px 14px rgba(139, 92, 246, 0.35);
+}
+
+#theme-cafe:checked ~ .theme-filter-nav label[for="theme-cafe"] {
+  background-color: var(--autumn);
+  color: #ffffff;
+  box-shadow: 0 4px 14px rgba(217, 119, 6, 0.35);
+}
+
+/* 테마 카드 그리드 */
+.theme-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+}
+
+/* 순수 CSS 필터링 규칙 (선택된 테마 이외의 카드는 숨김) */
+#theme-nature:checked ~ .theme-grid .card:not([data-theme="nature"]),
+#theme-ocean:checked ~ .theme-grid .card:not([data-theme="ocean"]),
+#theme-photo:checked ~ .theme-grid .card:not([data-theme="photo"]),
+#theme-cafe:checked ~ .theme-grid .card:not([data-theme="cafe"]) {
+  display: none;
+}
+
+/* 필터 전환 시 카드 페이드인 */
+.theme-grid .card {
+  animation: fadeIn 0.35s ease;
+}
+
+/* =========================================================
+   7. 준비물 체크리스트 & 여행 꿀팁
+   ========================================================= */
+.tips-section {
+  background-color: #ffffff;
+}
+
+.tips-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+}
+
+.tips-box {
+  background: var(--bg-page);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  padding: 32px;
+  box-shadow: var(--shadow-sm);
+}
+
+.box-title {
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: var(--text-main);
+  margin-bottom: 6px;
+}
+
+.box-subtitle {
+  font-size: 0.88rem;
+  color: var(--text-sub);
+  margin-bottom: 24px;
+}
+
+/* 순수 CSS 체크리스트 */
+.checklist {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.check-item label {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 16px;
+  background-color: #ffffff;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: var(--transition);
+  user-select: none;
+}
+
+.check-item label:hover {
+  border-color: #cbd5e1;
+  background-color: #f8fafc;
+}
+
+/* 실제 체크박스는 숨김 */
+.check-item input[type="checkbox"] {
+  display: none;
+}
+
+/* 커스텀 체크박스 사각형 */
+.chk-box {
+  width: 22px;
+  height: 22px;
+  border: 2px solid #cbd5e1;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: var(--transition);
+  background: #ffffff;
+}
+
+.chk-box::after {
+  content: "✓";
+  font-size: 14px;
+  font-weight: bold;
+  color: #ffffff;
+  opacity: 0;
+  transform: scale(0.4);
+  transition: var(--transition);
+}
+
+/* 체크되었을 때 스타일 */
+.check-item input[type="checkbox"]:checked + label {
+  background-color: #f1f5f9;
+  border-color: #cbd5e1;
+}
+
+.check-item input[type="checkbox"]:checked + label .chk-box {
+  background-color: var(--primary);
+  border-color: var(--primary);
+}
+
+.check-item input[type="checkbox"]:checked + label .chk-box::after {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.check-item input[type="checkbox"]:checked + label .chk-text {
+  text-decoration: line-through;
+  color: var(--text-light);
+}
+
+.chk-text {
+  font-size: 0.95rem;
+  color: var(--text-main);
+  transition: var(--transition);
+}
+
+/* HTML5 details/summary 아코디언 */
+.accordion {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.accordion-item {
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-sm);
+  background: #ffffff;
+  overflow: hidden;
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.accordion-item[open] {
+  border-color: #93c5fd;
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.08);
+}
+
+.accordion-header {
+  padding: 14px 18px;
+  font-size: 0.98rem;
+  font-weight: 600;
+  color: var(--text-main);
+  cursor: pointer;
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  user-select: none;
+  transition: background-color 0.2s ease;
+}
+
+.accordion-header::-webkit-details-marker {
+  display: none;
+}
+
+.accordion-header:hover {
+  background-color: #f8fafc;
+}
+
+.accordion-header::after {
+  content: "▾";
+  font-size: 1.1rem;
+  color: var(--text-sub);
+  transition: transform 0.25s ease;
+}
+
+.accordion-item[open] .accordion-header::after {
+  transform: rotate(180deg);
+  color: var(--primary);
+}
+
+.accordion-body {
+  padding: 0 18px 16px;
+  font-size: 0.92rem;
+  color: var(--text-sub);
+  line-height: 1.65;
+  border-top: 1px solid #f1f5f9;
+  padding-top: 12px;
+}
+
+/* =========================================================
+   8. 소개 & 문의 (About) 섹션
+   ========================================================= */
+.about-section {
+  background-color: var(--bg-page);
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+}
+
+.about-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  padding: 36px 28px;
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+  transition: var(--transition);
+}
+
+.about-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+  border-color: #cbd5e1;
+}
+
+.about-card-icon {
+  font-size: 2.6rem;
+  margin-bottom: 16px;
+}
+
+.about-card-title {
+  font-size: 1.35rem;
+  font-weight: 700;
+  margin-bottom: 14px;
+  color: var(--text-main);
+}
+
+.about-card-desc {
+  font-size: 0.95rem;
+  color: var(--text-sub);
+  line-height: 1.65;
+  margin-bottom: 20px;
+}
+
+.about-features {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  font-size: 0.94rem;
+  color: var(--text-main);
+  background-color: var(--bg-page);
+  padding: 16px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border-color);
+}
+
+.about-qr-box {
+  background: #ffffff;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-sm);
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: auto;
+}
+
+.about-contact-info {
+  background-color: var(--bg-page);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-sm);
+  padding: 18px;
+  font-size: 0.93rem;
+  color: var(--text-sub);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.about-contact-info strong {
+  color: var(--text-main);
+}
+
+.about-contact-info a {
+  color: var(--primary);
+  font-weight: 600;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 13px 28px;
+  border-radius: 9999px;
+  font-size: 1rem;
+  font-weight: 600;
+  transition: var(--transition);
+}
+
+.btn-primary {
+  background-color: var(--primary);
+  color: #ffffff;
+  box-shadow: 0 4px 16px rgba(37, 99, 235, 0.4);
+}
+
+.btn-primary:hover {
+  background-color: var(--primary-hover);
+  transform: translateY(-2px);
+}
+
+/* =========================================================
+   9. 푸터
+   ========================================================= */
+footer {
+  background-color: #0f172a;
+  border-top: 1px solid #1e293b;
+}
+
+.footer-bottom {
+  padding: 24px 0;
+  text-align: center;
+  font-size: 0.85rem;
+  color: #94a3b8;
+}
+
+/* =========================================================
+   10. 반응형 미디어 쿼리 (Pure CSS Responsive)
+   ========================================================= */
+@media (max-width: 992px) {
+  #tab-spring:checked ~ .season-panels .panel-spring,
+  #tab-summer:checked ~ .season-panels .panel-summer,
+  #tab-autumn:checked ~ .season-panels .panel-autumn,
+  #tab-winter:checked ~ .season-panels .panel-winter {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .theme-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .about-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .tips-layout {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-title {
+    font-size: 4.8rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1.3rem;
+  }
+
+  .navbar-inner {
+    flex-wrap: wrap;
+    height: auto;
+    padding: 12px 0;
+    gap: 12px;
+    justify-content: center;
+  }
+
+  .nav-links {
+    gap: 12px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  #tab-spring:checked ~ .season-panels .panel-spring,
+  #tab-summer:checked ~ .season-panels .panel-summer,
+  #tab-autumn:checked ~ .season-panels .panel-autumn,
+  #tab-winter:checked ~ .season-panels .panel-winter {
+    grid-template-columns: 1fr;
+  }
+
+  .theme-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .section {
+    padding: 60px 0;
+  }
+
+  .section-title {
+    font-size: 1.7rem;
+  }
+}
